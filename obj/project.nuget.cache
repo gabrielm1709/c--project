@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ENpel0UCYcbwwMocBhhcfaPqMRklqeOe/F8iZpSUI5ShfGdQTUeIBz4tUkgI7PFId17zR/DftMEYdypgdi0bbw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gabriel.morck\\source\\repos\\grupp-projekt-prog2\\grupp-projekt-prog2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabriel.morck\\.nuget\\packages\\htmlagilitypack\\1.11.45\\htmlagilitypack.1.11.45.nupkg.sha512"
+  ],
+  "logs": []
+}
