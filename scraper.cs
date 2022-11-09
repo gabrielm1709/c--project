@@ -18,7 +18,7 @@ namespace projekt_scraper
         public string getPokemonName()
         {
             return doc.DocumentNode.SelectSingleNode("//h1").InnerText;
-        }
+        } 
 
         public int[] getPokemonStats()
         {
