@@ -7,6 +7,8 @@ namespace pokemonspel
 {
     class Program
     {
+        // Array med namn för varje statposition. 
+        static string[] statsName = {"hp", "attack", "defence", "specialattack", "specialdefence", "speed"};
         static int healthpotion = 0;
         static Scraper scrape = new Scraper();
         static List<string> pokemonInventory = new List<string>();
@@ -16,7 +18,6 @@ namespace pokemonspel
             // Randomize första pokemonen
             string pokename = scrape.getPokemonFromType("any", 250, 350);
             scrape.initPokemon(pokename);
-
 
             /*
             foreach(int i in scrape.getPokemonStats()) 
@@ -119,6 +120,12 @@ namespace pokemonspel
             writeString("You accept the strangers quest and start heading towards the mountain.\n");*/
         }
 
+        // Funktion för att få index av en specifik stat. Ex value = "hp".
+        static int getIndex(string value) 
+        {
+            return Array.FindIndex(statsName, x => x.Contains(value)); 
+        }
+
         static void Fight(string pokemon, string enemy)
         {
             scrape.initPokemon(pokemon);
@@ -126,10 +133,10 @@ namespace pokemonspel
             scrape.initPokemon(enemy);
             int[] enemyStats = scrape.getPokemonStats();
             int round = 0;
-            while (pokemonStats[0] > 0 && enemyStats[0] > 0)
+            while (pokemonStats[getIndex("hp")] > 0 && enemyStats[getIndex("hp")] > 0)
             {
                 Console.Clear();
-                Console.WriteLine($"{pokemon} HP: {pokemonStats[0]}\n{enemy} HP: {enemyStats[0]}");
+                Console.WriteLine($"{pokemon} HP: {pokemonStats[getIndex("hp")]}\n{enemy} HP: {enemyStats[getIndex("hp")]}");
                 if (round % 2 == 0)
                 {
                     writeString("Do you want to Attack(1) or Heal(2): ");
@@ -194,7 +201,7 @@ namespace pokemonspel
                 Wait(1);
             }
 
-            if (pokemonStats[0] > 0)
+            if (pokemonStats[getIndex("hp")] > 0)
             {
                 Console.WriteLine($"{pokemon} won vs {enemy}");
             }
@@ -208,7 +215,7 @@ namespace pokemonspel
         static int calculateDamage(int[] attackingStats, int[] defendingStats) 
         {
             // Attack/(defence/10)
-            double damage = Convert.ToDouble(attackingStats[1] / ((defendingStats[2]) / 10));
+            double damage = Convert.ToDouble(attackingStats[getIndex("attack")] / ((defendingStats[getIndex("defence")]) / 10));
             // Multiplicera damage med en decimal mellan 0.8 och 1 för att variera skada varje runda. 
             damage *= (rnd.NextDouble()*0.2+0.8);
 
@@ -243,6 +250,7 @@ namespace pokemonspel
 
         static void writeString(string text)
         {
+            
             foreach (char c in text)
             {
                 Console.Write(c);
