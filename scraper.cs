@@ -9,12 +9,12 @@ namespace projekt_scraper
     {
         public HtmlWeb web = new HtmlWeb();
         public HtmlDocument doc = null;
-
+        // Laddar in sida från ett pokemonnamn
         public void initPokemon(string pokemon)
         {
             doc = web.Load($"https://pokemondb.net/pokedex/{pokemon}");
         }
-
+        
         public string getPokemonName()
         {
             return doc.DocumentNode.SelectSingleNode("//h1").InnerText;
