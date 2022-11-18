@@ -221,7 +221,8 @@ namespace pokemonspel
 
             return Convert.ToInt32(damage);
         }
-
+        
+        // Funktion för att välja nummer. För att undvika icke tillgängliga nummer kan man endast skriva in nummer inom ett visst intervall. 
         static int chooseNum(int min, int max)
         {
             int path = 0;
