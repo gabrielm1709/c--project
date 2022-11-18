@@ -20,8 +20,10 @@ namespace projekt_scraper
             return doc.DocumentNode.SelectSingleNode("//h1").InnerText;
         } 
 
+        // Funktion som returnerar stats i integer array. 
         public int[] getPokemonStats()
         {
+            // Array för att förvara stats
             int[] stats = new int[6];
             var nodes = doc.DocumentNode.Descendants().Where(n => n.HasClass("cell-num"));
 
