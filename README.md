@@ -6,8 +6,7 @@ Ett äventyrsspel med pokemon-tema som tar stats för pokemons från sidan pokem
 Scrapern hittas i scraper.cs filen som innehåller klassen Scraper. Scraper-klassen innehåller olika funktioner som hämtar information från webben (stats och namn). Den kan bland annat ta en random pokemon där man kan ange olika filter som exempelvis max- eller min-score och typ av pokemon.     
 
 ## Installation
-Observera att git krävs för följande steg.\n 
-För att installera spelet skriv in följande i din terminal: 
+För att installera spelet med git skriv in följande i din terminal:  
 ```
 git clone https://github.com/gabrielm1709/c--project.git
 ```
