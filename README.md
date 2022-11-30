@@ -8,6 +8,6 @@ Scrapern hittas i scraper.cs filen som innehåller klassen Scraper. Scraper-klas
 ## Installation
 För att installera spelet skriv in följande i din terminal: 
 ```
-git clone 
+git clone https://github.com/gabrielm1709/c--project.git
 ```
 
